@@ -1,0 +1,21 @@
+# Raw sequencing data — too large for git (hundreds of MB / GB)
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.bam
+*.bam.bai
+*.fastq
+*.fastq.gz
+*.fq.gz
+
+# Generated output — personal data, regenerate locally
+variants.tsv
+clinvar_hits.tsv
+clinvar_hits_*.tsv
+clinvar_lookup.tmp
+
+# Lab reports — personal PDFs
+*.pdf
+
+# macOS
+.DS_Store

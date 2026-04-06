@@ -52,7 +52,9 @@ if [[ -n "$INPUT" ]]; then
       $7 == "PASS" || $7 == "." {
         split($10, gt, ":")
         chr = $1; sub(/^chr/, "", chr)
-        print chr"\t"$2"\t"$4"\t"$5"\t"gt[1]
+        n = split($5, alts, ",")
+        for (i = 1; i <= n; i++)
+          print chr"\t"$2"\t"$4"\t"alts[i]"\t"gt[1]
       }
     ' | sort -k1,1V -k2,2n \
       | awk 'BEGIN{print "chr\tpos\tref\talt\tgenotype"} {print}' > "$VARIANTS"

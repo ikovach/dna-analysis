@@ -37,11 +37,6 @@ Standard Unix tools only: `awk`, `curl`, `gunzip`. Available by default on macOS
 # Step 3 — filter important findings
 awk 'NR==1 || $6 ~ /[Pp]athogenic|Uncertain/ {print}' clinvar_hits.tsv > clinvar_important.tsv
 # → produces clinvar_important.tsv with Pathogenic, Likely pathogenic, and Uncertain significance variants
-
-# Commit and push clinvar_important.tsv only
-git add clinvar_important.tsv
-git commit -m "update clinvar findings"
-git push
 ```
 
 ClinVar (~180 MB) is downloaded automatically on first run and refreshed if older than 30 days.
@@ -153,11 +148,6 @@ raw.vcf  →  extract_variants.sh  →  variants.tsv  →  annotate_clinvar.sh  
 # Шаг 3 — отфильтровать важные находки
 awk 'NR==1 || $6 ~ /[Pp]athogenic|Uncertain/ {print}' clinvar_hits.tsv > clinvar_important.tsv
 # → создаёт clinvar_important.tsv с Pathogenic, Likely pathogenic и Uncertain significance вариантами
-
-# Закоммитить и запушить только clinvar_important.tsv
-git add clinvar_important.tsv
-git commit -m "update clinvar findings"
-git push
 ```
 
 ClinVar (~180 МБ) скачивается автоматически при первом запуске и обновляется, если файл старше 30 дней.

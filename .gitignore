@@ -1,20 +1,18 @@
-# Raw sequencing data — too large for git (hundreds of MB / GB)
+# ClinVar database (downloaded automatically, ~180 MB)
+clinvar/
+
+# User data — raw VCF, extracted variants, results
+data/
+
+# Raw sequencing files that might be in project root
 *.vcf
 *.vcf.gz
-*.vcf.gz.tbi
 *.bam
-*.bam.bai
 *.fastq
 *.fastq.gz
 *.fq.gz
 
-# Generated output — personal data, regenerate locally
-variants.tsv
-clinvar_hits.tsv
-clinvar_hits_*.tsv
-clinvar_lookup.tmp
-
-# Lab reports — personal PDFs
+# Lab reports
 *.pdf
 
 # macOS
